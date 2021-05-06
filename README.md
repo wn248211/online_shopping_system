@@ -1,5 +1,6 @@
-# tprj
-Template for CMPT 756's term project.
+# Online shopping system
+CMPT 756's term project.
+Our application is an online shopping system. It is designed for users to place orders online, manage items in their shopping cart, checkout their shopping cart, which turns it into an order, and list their orders.
 
 
 # Deploment
