@@ -1,0 +1,7 @@
+# Header for ConfigMap built from order.csv
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: order
+data:
+  order.csv: |

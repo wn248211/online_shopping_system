@@ -1,0 +1,417 @@
+{
+	"info": {
+		"_postman_id": "ec89ebe0-7cd5-42d1-9190-f7662742f4a0",
+		"name": "item",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "CRUD",
+			"item": [
+				{
+					"name": "Create item",
+					"request": {
+						"auth": {
+							"type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eJu0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiOGRkMzcxNmYtNGY0My00NjVkLWEzNTYtOTBkNDExMmZlY2FkIiwidGltZSI6MTYxNjc2NTk2MS41MTA5MDU3fQ.bxQjTj7wEhk5bK0luskfWUnBkDLdqCjmfsQALbtj3yI",
+                  "type": "string"
+                }
+              ]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"item_name\": \"iPhone 12 Pro Max\",\n    \"item_status\": 0,\n    \"item_price\": 5999,\n \"item_description\": \"iPhone12, good quality\"  \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{address}}/api/v1/item",
+							"protocol": "http",
+							"host": [
+								"{{address}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"item"
+							]
+						},
+						"description": "Create one item"
+					},
+					"response": [
+						{
+							"name": "Create item",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"item_name\": \"iPhone 12 Pro Max\",\n    \"item_status\": 0,\n    \"item_price\": 5999,\n \"item_description\": \"iPhone12, good quality\"  \n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{address}}/api/v1/item",
+									"protocol": "http",
+									"host": [
+										"{{address}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"item"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "content-length",
+									"value": "51"
+								},
+								{
+									"key": "server",
+									"value": "istio-envoy"
+								},
+								{
+									"key": "date",
+									"value": "Fri, 26 Mar 2021 13:38:40 GMT"
+								},
+								{
+									"key": "x-envoy-upstream-service-time",
+									"value": "325"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"item_id\": \"aa995317-b3ff-49b6-a775-1609602da76c\" \n}"
+						}
+					]
+				},
+				{
+					"name": "Update item",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"item_name\": \"iPhone 12 Pro Max\",\n    \"item_status\": 0,\n    \"item_price\": 15999,\n \"item_description\": \"iPhone12, good quality\"  \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{address}}/api/v1/item/{{item_id}}",
+							"protocol": "http",
+							"host": [
+								"{{address}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"item",
+								"{{item_id}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update item",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"item_name\": \"iPhone 12 Pro Max\",\n    \"item_status\": 0,\n    \"item_price\": 15999,\n \"item_description\": \"iPhone12, good quality\"  \n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{address}}/api/v1/item/{{item_id}}",
+									"protocol": "http",
+									"host": [
+										"{{address}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"item",
+										"{{item_id}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "content-length",
+									"value": "394"
+								},
+								{
+									"key": "server",
+									"value": "istio-envoy"
+								},
+								{
+									"key": "date",
+									"value": "Fri, 26 Mar 2021 13:41:59 GMT"
+								},
+								{
+									"key": "x-envoy-upstream-service-time",
+									"value": "212"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"ResponseMetadata\": {\n        \"HTTPHeaders\": {\n            \"connection\": \"keep-alive\",\n            \"content-length\": \"2\",\n            \"content-type\": \"application/x-amz-json-1.0\",\n            \"date\": \"Fri, 26 Mar 2021 13:41:59 GMT\",\n            \"server\": \"Server\",\n            \"x-amz-crc32\": \"2745614147\",\n            \"x-amzn-requestid\": \"3N3B9F4H67FLNU1104B26A984FVV4KQNSO5AEMVJF66Q9ASUAAJG\"\n        },\n        \"HTTPStatusCode\": 200,\n        \"RequestId\": \"3N3B9F4H67FLNU1104B26A984FVV4KQNSO5AEMVJF66Q9ASUAAJG\",\n        \"RetryAttempts\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete item",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://{{address}}/api/v1/item/{{item_id}}",
+							"protocol": "http",
+							"host": [
+								"{{address}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"item",
+								"{{item_id}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete item",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5001/api/v1/item/028c99ef-3e12-4fc9-aac8-172f877c2d24",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5001",
+									"path": [
+										"api",
+										"v1",
+										"item",
+										"028c99ef-3e12-4fc9-aac8-172f877c2d24"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "496"
+								},
+								{
+									"key": "Server",
+									"value": "Werkzeug/1.0.1 Python/3.8.5"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 25 Sep 2020 23:12:30 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"ResponseMetadata\": {\n        \"HTTPHeaders\": {\n            \"connection\": \"keep-alive\",\n            \"content-length\": \"2\",\n            \"content-type\": \"application/x-amz-json-1.0\",\n            \"date\": \"Fri, 25 Sep 2020 23:12:30 GMT\",\n            \"server\": \"Server\",\n            \"x-amz-crc32\": \"2745614147\",\n            \"x-amzn-requestid\": \"S8CG32I706JI1KRM1R4DM78OQBVV4KQNSO5AEMVJF66Q9ASUAAJG\"\n        },\n        \"HTTPStatusCode\": 200,\n        \"RequestId\": \"S8CG32I706JI1KRM1R4DM78OQBVV4KQNSO5AEMVJF66Q9ASUAAJG\",\n        \"RetryAttempts\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get item",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{address}}/api/v1/item/{{item_id}}",
+							"protocol": "http",
+							"host": [
+								"{{address}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"item",
+								"{{item_id}}"
+							]
+						},
+						"description": "Get a specific item"
+					},
+					"response": [
+						{
+							"name": "Get item",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{address}}/api/v1/item/{{item_id}}",
+									"protocol": "http",
+									"host": [
+										"{{address}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"item",
+										"{{item_id}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "content-length",
+									"value": "117"
+								},
+								{
+									"key": "server",
+									"value": "istio-envoy"
+								},
+								{
+									"key": "date",
+									"value": "Fri, 26 Mar 2021 13:40:13 GMT"
+								},
+								{
+									"key": "x-envoy-upstream-service-time",
+									"value": "68"
+								}
+							],
+							"cookie": [],
+							"body": "{\n   \"Items\": [\n        {\n            \"Name\": \"iPhone12\",\n            \"Price\": \"5999.00\",\n            \"Description\": \"iPhone12, good quality\",\n            \"item_id\": \"b5a4222d-7b09-437d-8c13-8cca68eeaa34\"\n        }\n    ],\n    \"ResponseMetadata\": {\n        \"HTTPHeaders\": {\n            \"connection\": \"keep-alive\",\n            \"content-length\": \"149\",\n            \"content-type\": \"application/x-amz-json-1.0\",\n            \"date\": \"Fri, 25 Sep 2020 23:04:16 GMT\",\n            \"server\": \"Server\",\n            \"x-amz-crc32\": \"2921592074\",\n            \"x-amzn-requestid\": \"O5R5MA59ROOT0HUU6TP7NCHBT7VV4KQNSO5AEMVJF66Q9ASUAAJG\"\n        },\n        \"HTTPStatusCode\": 200,\n        \"RequestId\": \"O5R5MA59ROOT0HUU6TP7NCHBT7VV4KQNSO5AEMVJF66Q9ASUAAJG\",\n        \"RetryAttempts\": 0\n    },\n    \"ScannedCount\": 1\n}"
+						}
+					]
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiOGRkMzcxNmYtNGY0My00NjVkLWEzNTYtOTBkNDExMmZlY2FkIiwidGltZSI6MTYxNjc2NTk2MS41MTA5MDU3fQ.bxQjTj7wEhk5bK0luskfWUnBkDLdqCjmfsQALbtj3yI",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "address",
+			"value": "localhost:5001"
+		},
+		{
+			"key": "item_id",
+			"value": "b2931-8be6-48fc-aa9e-5a0f9f536bd3"
+		}
+	]
+}
+
+
+

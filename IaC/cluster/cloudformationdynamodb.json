@@ -1,0 +1,109 @@
+{
+  "AWSTemplateFormatVersion": "2010-09-09",
+  "Resources": {
+    "tableUsers": {
+      "Type": "AWS::DynamoDB::Table",
+      "Properties": {
+        "TableName": "User-TeamW",
+        "AttributeDefinitions": [
+          {
+            "AttributeName": "user_id",
+            "AttributeType": "S"
+          }
+        ],
+        "KeySchema": [
+          {
+            "AttributeName": "user_id",
+            "KeyType": "HASH"
+          }
+        ],
+        "ProvisionedThroughput": {
+          "ReadCapacityUnits": "5",
+          "WriteCapacityUnits": "5"
+        }
+      }
+    },
+    "tableItem": {
+      "Type": "AWS::DynamoDB::Table",
+      "Properties": {
+        "TableName": "Item-TeamW",
+        "AttributeDefinitions": [
+          {
+            "AttributeName": "item_id",
+            "AttributeType": "S"
+          }
+        ],
+        "KeySchema": [
+          {
+            "AttributeName": "item_id",
+            "KeyType": "HASH"
+          }
+        ],
+        "ProvisionedThroughput": {
+          "ReadCapacityUnits": "5",
+          "WriteCapacityUnits": "5"
+        }
+      }
+    },
+    "tableOrder": {
+      "Type": "AWS::DynamoDB::Table",
+      "Properties": {
+        "TableName": "Order-TeamW",
+        "AttributeDefinitions": [
+          {
+            "AttributeName": "user_id",
+            "AttributeType": "S"
+          },
+          {
+            "AttributeName": "order_id",
+            "AttributeType": "S"
+          }
+        ],
+        "KeySchema": [
+          {
+            "AttributeName": "user_id",
+            "KeyType": "HASH"
+          },
+          {
+            "AttributeName": "order_id",
+            "KeyType": "RANGE"
+          }
+        ],
+        "ProvisionedThroughput": {
+          "ReadCapacityUnits": "5",
+          "WriteCapacityUnits": "5"
+        }
+      }
+    },
+    "tableShoppingCart": {
+      "Type": "AWS::DynamoDB::Table",
+      "Properties": {
+        "TableName": "Shopping-cart-TeamW",
+        "AttributeDefinitions": [
+          {
+            "AttributeName": "user_id",
+            "AttributeType": "S"
+          },
+          {
+            "AttributeName": "item_id",
+            "AttributeType": "S"
+          }
+        ],
+        "KeySchema": [
+          {
+            "AttributeName": "user_id",
+            "KeyType": "HASH"
+          },
+          {
+            "AttributeName": "item_id",
+            "KeyType": "RANGE"
+          }
+        ],
+        "ProvisionedThroughput": {
+          "ReadCapacityUnits": "5",
+          "WriteCapacityUnits": "5"
+        }
+      }
+    }
+  }
+}

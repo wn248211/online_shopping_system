@@ -1,0 +1,7 @@
+# Header for ConfigMap built from user.csv
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: user
+data:
+  user.csv: |
